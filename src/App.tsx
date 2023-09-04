@@ -28,7 +28,7 @@ function App() {
     const search = async (event: any) => {
         if (event.key === 'Enter') {
             try {
-                const geoResponse = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=232c0a0880ae295730164fb7e4ad7a80`);
+                const geoResponse = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=232c0a0880ae295730164fb7e4ad7a80`);
                 const {lat, lon} = geoResponse.data[0];
                 const weatherResponse = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=232c0a0880ae295730164fb7e4ad7a80&units=metric`);
                 setData(weatherResponse.data);
